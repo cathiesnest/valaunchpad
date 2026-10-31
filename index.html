@@ -1,0 +1,2123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#087F83">
+
+  <title>VA Launchpad | Build Your Skills. Own Your Next Step.</title>
+
+  <meta name="description" content="VA Launchpad by CathiesNest Digital offers practical virtual assistant coaching, CV and portfolio reviews, and career preparation.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --teal: #087F83;
+      --teal-dark: #075F63;
+      --green: #62B85A;
+      --green-dark: #397F46;
+      --sage: #DCE9D9;
+      --sage-light: #F0F6EF;
+      --white: #FFFFFF;
+      --cream: #FAFCF9;
+      --dark: #263B36;
+      --gray: #64736D;
+      --border: #E2EBE3;
+      --shadow: 0 10px 35px rgba(8, 80, 75, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      background: rgba(255,255,255,0.97);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--teal);
+      line-height: 1.2;
+    }
+
+    .logo span {
+      display: block;
+      color: var(--green-dark);
+      font-size: 10px;
+      letter-spacing: 2px;
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--green-dark);
+    }
+
+    .nav-cta {
+      background: var(--teal);
+      color: white !important;
+      padding: 11px 18px;
+      border-radius: 30px;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      color: var(--teal);
+      font-size: 27px;
+      cursor: pointer;
+    }
+
+    /* BUTTONS */
+
+    .btn {
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      border-radius: 30px;
+      padding: 14px 25px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: 0.25s;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--teal-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-green {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn-green:hover {
+      background: var(--green-dark);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--teal);
+      color: var(--teal);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--teal);
+      color: white;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: linear-gradient(125deg, #075F63, #087F83 58%, #43A66D);
+      color: white;
+      padding: 100px 0 105px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 50%;
+      right: -100px;
+      top: -150px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 50%;
+      right: 100px;
+      bottom: -220px;
+    }
+
+    .hero-content {
+      max-width: 750px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      color: #C9F2D0;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 65px);
+      line-height: 1.16;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: #B8EAA8;
+    }
+
+    .hero p {
+      max-width: 620px;
+      font-size: 15px;
+      color: #E7F7F0;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero .btn-primary {
+      background: white;
+      color: var(--teal);
+    }
+
+    .hero .btn-outline {
+      border-color: rgba(255,255,255,0.7);
+      color: white;
+    }
+
+    .hero-note {
+      margin-top: 35px;
+      font-size: 11px;
+      color: #D8F1E8;
+      letter-spacing: 0.5px;
+    }
+
+    /* INTRO STRIP */
+
+    .intro-strip {
+      background: white;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      text-align: center;
+    }
+
+    .intro-item strong {
+      display: block;
+      font-size: 21px;
+      color: var(--teal);
+    }
+
+    .intro-item span {
+      font-size: 11px;
+      color: var(--gray);
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 45px;
+    }
+
+    .section-heading .eyebrow {
+      color: var(--green-dark);
+      margin-bottom: 10px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(26px, 4vw, 38px);
+      line-height: 1.3;
+      color: var(--teal-dark);
+      margin-bottom: 14px;
+    }
+
+    .section-heading p {
+      color: var(--gray);
+      font-size: 13px;
+    }
+
+    /* SERVICES */
+
+    .services {
+      background: var(--cream);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      padding: 27px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      transition: 0.25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: #A6D5B1;
+    }
+
+    .service-icon {
+      width: 46px;
+      height: 46px;
+      background: var(--sage-light);
+      color: var(--teal);
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      font-size: 21px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 16px;
+      color: var(--teal-dark);
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 12px;
+      color: var(--gray);
+      flex-grow: 1;
+      margin-bottom: 22px;
+    }
+
+    .price {
+      color: var(--green-dark);
+      font-size: 27px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .price small {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--gray);
+    }
+
+    .service-card .btn {
+      width: 100%;
+    }
+
+    .pricing-note {
+      text-align: center;
+      font-size: 11px;
+      color: var(--gray);
+      margin-top: 28px;
+    }
+
+    /* PROCESS */
+
+    .process {
+      background: var(--sage-light);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .process-card {
+      background: white;
+      border-radius: 15px;
+      padding: 24px 18px;
+      text-align: center;
+    }
+
+    .process-number {
+      background: var(--teal);
+      color: white;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 15px;
+      font-weight: 800;
+    }
+
+    .process-card h3 {
+      font-size: 14px;
+      color: var(--teal-dark);
+      margin-bottom: 9px;
+    }
+
+    .process-card p {
+      font-size: 11px;
+      color: var(--gray);
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-visual {
+      min-height: 390px;
+      border-radius: 25px;
+      background: linear-gradient(145deg, #DCE9D9, #A9D8C1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .about-visual-inner {
+      background: rgba(255,255,255,0.8);
+      padding: 45px 25px;
+      border-radius: 20px;
+      width: 100%;
+    }
+
+    .about-initial {
+      font-size: 65px;
+      color: var(--teal);
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .about-visual-inner h3 {
+      font-size: 20px;
+      color: var(--teal-dark);
+      margin: 15px 0 5px;
+    }
+
+    .about-visual-inner p {
+      font-size: 11px;
+      color: var(--gray);
+    }
+
+    .about-content .eyebrow {
+      color: var(--green-dark);
+      margin-bottom: 10px;
+    }
+
+    .about-content h2 {
+      font-size: 34px;
+      color: var(--teal-dark);
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+
+    .about-content p {
+      font-size: 13px;
+      color: var(--gray);
+      margin-bottom: 15px;
+    }
+
+    .about-highlight {
+      padding: 18px;
+      background: var(--sage-light);
+      border-left: 4px solid var(--green);
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--teal-dark);
+      margin-top: 20px;
+    }
+
+    /* WHY US */
+
+    .why {
+      background: var(--sage-light);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .why-card {
+      padding: 25px;
+      background: white;
+      border-radius: 15px;
+    }
+
+    .why-card span {
+      font-size: 26px;
+    }
+
+    .why-card h3 {
+      color: var(--teal-dark);
+      font-size: 15px;
+      margin: 12px 0 8px;
+    }
+
+    .why-card p {
+      color: var(--gray);
+      font-size: 12px;
+    }
+
+    /* PAYMENT */
+
+    .payment {
+      background: white;
+    }
+
+    .payment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .payment-card {
+      padding: 30px;
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--cream);
+    }
+
+    .payment-card .payment-icon {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .payment-card h3 {
+      color: var(--teal);
+      font-size: 17px;
+      margin-bottom: 7px;
+    }
+
+    .payment-card p {
+      color: var(--gray);
+      font-size: 12px;
+    }
+
+    .payment-note {
+      text-align: center;
+      margin: 25px auto 0;
+      color: var(--gray);
+      font-size: 11px;
+      max-width: 600px;
+    }
+
+    /* BOOKING */
+
+    .booking {
+      background: var(--sage-light);
+    }
+
+    .booking-wrapper {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .booking-info {
+      background: var(--teal);
+      color: white;
+      padding: 42px 32px;
+    }
+
+    .booking-info h3 {
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .booking-info p {
+      font-size: 12px;
+      color: #E3F4EE;
+      margin-bottom: 22px;
+    }
+
+    .booking-info ul {
+      list-style: none;
+      font-size: 12px;
+    }
+
+    .booking-info li {
+      margin: 13px 0;
+    }
+
+    .booking-form {
+      padding: 40px;
+    }
+
+    .booking-form h3 {
+      color: var(--teal-dark);
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .form-description {
+      color: var(--gray);
+      font-size: 11px;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 7px;
+      color: var(--dark);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 13px;
+      background: #FCFEFC;
+      font-size: 12px;
+      outline: none;
+      color: var(--dark);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--teal);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .agreement {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 20px 0;
+      font-size: 11px;
+      color: var(--gray);
+    }
+
+    .agreement input {
+      margin-top: 4px;
+      accent-color: var(--teal);
+      flex-shrink: 0;
+    }
+
+    .agreement a {
+      color: var(--teal);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    .booking-form button {
+      width: 100%;
+    }
+
+    .form-note {
+      font-size: 10px;
+      color: var(--gray);
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    /* DISCLAIMER */
+
+    .disclaimer {
+      background: white;
+    }
+
+    .disclaimer-box {
+      background: #F2F7F1;
+      border: 1px solid #D9E9D9;
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    .disclaimer-box h3 {
+      color: var(--teal-dark);
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .disclaimer-box p {
+      font-size: 12px;
+      color: var(--gray);
+      margin-bottom: 12px;
+    }
+
+    /* TERMS */
+
+    .terms {
+      background: var(--cream);
+    }
+
+    .terms-container {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .terms-intro {
+      font-size: 12px;
+      color: var(--gray);
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .term-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .term-item summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 17px 20px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--teal-dark);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .term-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .term-item summary::after {
+      content: "+";
+      color: var(--green-dark);
+      font-size: 18px;
+    }
+
+    .term-item[open] summary::after {
+      content: "−";
+    }
+
+    .term-content {
+      padding: 0 20px 20px;
+      color: var(--gray);
+      font-size: 12px;
+    }
+
+    .term-content ul {
+      padding-left: 20px;
+    }
+
+    .term-content li {
+      margin-bottom: 7px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: linear-gradient(120deg, #087F83, #3C9C69);
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: clamp(27px, 4vw, 40px);
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      font-size: 13px;
+      color: #E7F7EE;
+      max-width: 600px;
+      margin: 0 auto 25px;
+    }
+
+    .contact-email {
+      display: inline-block;
+      color: white;
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 25px;
+      text-decoration: underline;
+    }
+
+    .contact .btn {
+      background: white;
+      color: var(--teal);
+    }
+
+    .contact .btn-outline {
+      background: transparent;
+      color: white;
+      border-color: white;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #064F52;
+      color: white;
+      padding: 40px 0 22px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      padding-bottom: 30px;
+    }
+
+    .footer-brand h3 {
+      font-size: 20px;
+      margin-bottom: 7px;
+    }
+
+    .footer-brand p,
+    .footer-links a {
+      color: #D1E9DF;
+      font-size: 11px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 20px;
+      text-align: center;
+      color: #D1E9DF;
+      font-size: 10px;
+    }
+
+    .powered {
+      color: #B8EAA8;
+      font-weight: 700;
+      margin-top: 7px;
+    }
+
+    /* BACK TO TOP */
+
+    .back-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--teal);
+      color: white;
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      font-size: 20px;
+      box-shadow: var(--shadow);
+      z-index: 900;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .nav-links {
+        gap: 12px;
+        font-size: 10px;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        gap: 30px;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px 5%;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.08);
+        gap: 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px 0;
+        font-size: 12px;
+      }
+
+      .nav-cta {
+        text-align: center;
+        margin-top: 8px;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      .hero h1 {
+        font-size: 39px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .service-grid,
+      .why-grid,
+      .payment-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid,
+      .booking-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .about-visual {
+        min-height: 280px;
+      }
+
+      .about-content h2 {
+        font-size: 29px;
+      }
+
+      .booking-info,
+      .booking-form {
+        padding: 30px 23px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#home" class="logo">
+          VA Launchpad
+          <span>BY CATHIESNEST DIGITAL</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+          aria-label="Toggle navigation" aria-expanded="false">
+          ☰
+        </button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#payment">Payment</a>
+          <a href="#terms">Terms</a>
+          <a href="#contact">Contact</a>
+          <a href="#booking" class="nav-cta">Book a Session</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            YOUR NEXT CHAPTER STARTS HERE
+          </div>
+
+          <h1>
+            Build your skills.<br>
+            <span>Own your next step.</span>
+          </h1>
+
+          <p>
+            Starting your Virtual Assistant journey doesn't have
+            to be overwhelming. Get practical guidance, personalized
+            coaching, and career preparation to help you move forward
+            with confidence.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#services" class="btn btn-primary">
+              Explore Coaching Services
+            </a>
+
+            <a href="#about" class="btn btn-outline">
+              Meet Catherine
+            </a>
+          </div>
+
+          <div class="hero-note">
+            PRACTICAL GUIDANCE • HONEST EXPECTATIONS • YOUR OWN PACE
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+
+    <div class="intro-strip">
+      <div class="container intro-grid">
+
+        <div class="intro-item">
+          <strong>₱499</strong>
+          <span>Starting Coaching Rate</span>
+        </div>
+
+        <div class="intro-item">
+          <strong>1:1</strong>
+          <span>Personalized Coaching</span>
+        </div>
+
+        <div class="intro-item">
+          <strong>Your Pace</strong>
+          <span>Practical Career Guidance</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+
+    <section class="services" id="services">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">COACHING SERVICES</div>
+
+          <h2>Invest in your next step.</h2>
+
+          <p>
+            Straightforward services, transparent pricing,
+            and practical support designed to help you prepare
+            for the Virtual Assistant industry.
+          </p>
+        </div>
+
+        <div class="service-grid">
+
+          <div class="service-card">
+            <div class="service-icon">◷</div>
+
+            <h3>1-Hour VA Coaching Session</h3>
+
+            <p>
+              A practical introduction to the VA industry,
+              common roles, essential skills, and how to get started.
+            </p>
+
+            <div class="price">₱499</div>
+
+            <a href="#booking"
+              class="btn btn-outline choose-service"
+              data-service="1-Hour VA Coaching Session">
+              Book This Service
+            </a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">✦</div>
+
+            <h3>2-Hour Personalized Coaching</h3>
+
+            <p>
+              In-depth coaching covering VA skills, digital tools,
+              applications, professional presentation, and career direction.
+            </p>
+
+            <div class="price">₱899</div>
+
+            <a href="#booking"
+              class="btn btn-outline choose-service"
+              data-service="2-Hour Personalized Coaching">
+              Book This Service
+            </a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">◎</div>
+
+            <h3>3-Session Coaching Package</h3>
+
+            <p>
+              Three structured coaching sessions to help you
+              build your knowledge, improve your preparation,
+              and track your progress.
+            </p>
+
+            <div class="price">₱1,499</div>
+
+            <a href="#booking"
+              class="btn btn-outline choose-service"
+              data-service="3-Session Coaching Package">
+              Book This Service
+            </a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">▤</div>
+
+            <h3>CV and Portfolio Review</h3>
+
+            <p>
+              Get feedback on your CV and portfolio, including
+              practical suggestions to improve clarity,
+              presentation, and professionalism.
+            </p>
+
+            <div class="price">₱599</div>
+
+            <a href="#booking"
+              class="btn btn-outline choose-service"
+              data-service="CV and Portfolio Review">
+              Book This Service
+            </a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">↗</div>
+
+            <h3>VA Readiness and Career Preparation</h3>
+
+            <p>
+              Identify your strengths, recognize skill gaps,
+              and prepare for job applications, interviews,
+              and remote work expectations.
+            </p>
+
+            <div class="price">₱799</div>
+
+            <a href="#booking"
+              class="btn btn-outline choose-service"
+              data-service="VA Readiness and Career Preparation">
+              Book This Service
+            </a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">♡</div>
+
+            <h3>Not Sure Where to Start?</h3>
+
+            <p>
+              Tell us about your goals and current experience.
+              We can help identify which available coaching
+              service best matches your needs.
+            </p>
+
+            <div class="price">Let's Talk</div>
+
+            <a href="mailto:cathiesnest@gmail.com"
+              class="btn btn-outline">
+              Send an Inquiry
+            </a>
+          </div>
+
+        </div>
+
+        <p class="pricing-note">
+          Prices are in Philippine pesos (PHP). Published rates
+          may change for future bookings. Confirmed bookings
+          retain their agreed price.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+
+    <section class="process" id="process">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">SIMPLE AND STRAIGHTFORWARD</div>
+          <h2>How it works</h2>
+
+          <p>
+            From your first inquiry to your coaching session,
+            here's what to expect.
+          </p>
+        </div>
+
+        <div class="process-grid">
+
+          <div class="process-card">
+            <div class="process-number">1</div>
+            <h3>Choose Your Service</h3>
+            <p>
+              Explore the available services and select
+              the coaching support you need.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">2</div>
+            <h3>Submit Your Inquiry</h3>
+            <p>
+              Share your details and preferred service
+              through the booking inquiry form.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">3</div>
+            <h3>Confirm and Pay</h3>
+            <p>
+              Receive confirmation, payment instructions,
+              and your agreed coaching schedule.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">4</div>
+            <h3>Start Learning</h3>
+            <p>
+              Attend your session and work on your
+              professional development.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div class="about-visual">
+            <div class="about-visual-inner">
+
+              <div class="about-initial">CG</div>
+
+              <h3>Catherine Garcia</h3>
+
+              <p>
+                Founder of CathiesNest Digital
+              </p>
+
+              <p style="margin-top:12px;">
+                Operations • Quality Assurance • Coaching
+              </p>
+
+            </div>
+          </div>
+
+          <div class="about-content">
+
+            <div class="eyebrow">A LITTLE ABOUT ME</div>
+
+            <h2>Meet Catherine.</h2>
+
+            <p>
+              I'm Catherine, the person behind CathiesNest Digital.
+              My professional background includes banking operations,
+              customer success, quality assurance, employee coaching,
+              administrative support, and startup operations.
+            </p>
+
+            <p>
+              Throughout my career, I've developed practical
+              experience in communication, problem-solving,
+              process improvement, quality standards, and
+              working with digital tools.
+            </p>
+
+            <p>
+              I created VA Launchpad to help aspiring Virtual
+              Assistants better understand the industry,
+              recognize their strengths, improve their
+              professional presentation, and take practical
+              steps toward remote work.
+            </p>
+
+            <p>
+              I believe that getting started shouldn't feel
+              overwhelming. Sometimes, what you need is the
+              right direction, honest guidance, and someone
+              who can help you see your next step.
+            </p>
+
+            <div class="about-highlight">
+              My goal isn't to promise you a job.
+              It's to help you become better prepared to pursue one.
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY VA LAUNCHPAD -->
+
+    <section class="why">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">OUR APPROACH</div>
+          <h2>Guidance that makes sense.</h2>
+
+          <p>
+            No unrealistic promises. No unnecessary pressure.
+            Just practical career support.
+          </p>
+        </div>
+
+        <div class="why-grid">
+
+          <div class="why-card">
+            <span>🌱</span>
+            <h3>Start Where You Are</h3>
+            <p>
+              You don't need to know everything before you begin.
+              Learn according to your current skills and goals.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <span>💡</span>
+            <h3>Practical Learning</h3>
+            <p>
+              Focus on useful knowledge, professional tools,
+              and real-world expectations.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <span>🤝</span>
+            <h3>Honest Guidance</h3>
+            <p>
+              Understand both the opportunities and challenges
+              of pursuing a career in remote work.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PAYMENT -->
+
+    <section class="payment" id="payment">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">PAYMENT OPTIONS</div>
+          <h2>Simple and convenient payments.</h2>
+
+          <p>
+            We currently accept the following payment methods
+            for confirmed coaching bookings.
+          </p>
+        </div>
+
+        <div class="payment-grid">
+
+          <div class="payment-card">
+            <div class="payment-icon">📱</div>
+            <h3>GCash</h3>
+            <p>
+              Pay using your GCash mobile wallet.
+              Payment instructions will be provided
+              after booking confirmation.
+            </p>
+          </div>
+
+          <div class="payment-card">
+            <div class="payment-icon">🏦</div>
+            <h3>GoTyme Bank</h3>
+            <p>
+              Pay through a GoTyme Bank transfer.
+              Account instructions will be provided
+              after booking confirmation.
+            </p>
+          </div>
+
+        </div>
+
+        <p class="payment-note">
+          Please wait for official payment instructions.
+          Do not send money to unverified accounts.
+          Keep your transaction receipt for reference.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- BOOKING FORM -->
+
+    <section class="booking" id="booking">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">LET'S GET STARTED</div>
+          <h2>Request a coaching session.</h2>
+
+          <p>
+            Complete the inquiry form below.
+            We'll review your request and respond through email.
+          </p>
+        </div>
+
+        <div class="booking-wrapper">
+
+          <div class="booking-info">
+
+            <h3>Your next step starts with a conversation.</h3>
+
+            <p>
+              Tell us what you're looking for.
+              We'll get back to you with the next steps
+              and booking details.
+            </p>
+
+            <ul>
+              <li>✓ Transparent service pricing</li>
+              <li>✓ Personalized coaching options</li>
+              <li>✓ Clear payment instructions</li>
+              <li>✓ Confirmed booking schedule</li>
+              <li>✓ No guaranteed job or income claims</li>
+            </ul>
+
+            <p style="margin-top:35px;">
+              Questions before booking?
+            </p>
+
+            <a href="mailto:cathiesnest@gmail.com"
+              style="color:white;font-weight:700;font-size:13px;">
+              cathiesnest@gmail.com
+            </a>
+
+          </div>
+
+          <form class="booking-form" id="bookingForm">
+
+            <h3>Booking inquiry</h3>
+
+            <p class="form-description">
+              Fields marked with * are required.
+              Submitting this form opens an email draft.
+            </p>
+
+            <div class="form-group">
+              <label for="clientName">Full Name *</label>
+              <input
+                type="text"
+                id="clientName"
+                name="clientName"
+                placeholder="Enter your full name"
+                required
+                maxlength="100">
+            </div>
+
+            <div class="form-group">
+              <label for="clientEmail">Email Address *</label>
+              <input
+                type="email"
+                id="clientEmail"
+                name="clientEmail"
+                placeholder="you@example.com"
+                required
+                maxlength="150">
+            </div>
+
+            <div class="form-group">
+              <label for="clientService">Select a Service *</label>
+
+              <select id="clientService"
+                name="clientService" required>
+
+                <option value="">Choose a service</option>
+
+                <option value="1-Hour VA Coaching Session - PHP 499">
+                  1-Hour VA Coaching Session — ₱499
+                </option>
+
+                <option value="2-Hour Personalized Coaching - PHP 899">
+                  2-Hour Personalized Coaching — ₱899
+                </option>
+
+                <option value="3-Session Coaching Package - PHP 1499">
+                  3-Session Coaching Package — ₱1,499
+                </option>
+
+                <option value="CV and Portfolio Review - PHP 599">
+                  CV and Portfolio Review — ₱599
+                </option>
+
+                <option value="VA Readiness and Career Preparation - PHP 799">
+                  VA Readiness and Career Preparation — ₱799
+                </option>
+
+                <option value="General Inquiry">
+                  General Inquiry
+                </option>
+
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="preferredSchedule">
+                Preferred Schedule
+              </label>
+
+              <input
+                type="text"
+                id="preferredSchedule"
+                name="preferredSchedule"
+                placeholder="Example: Weekdays, 2 PM onwards">
+            </div>
+
+            <div class="form-group">
+              <label for="clientMessage">
+                Tell us about your goals or questions *
+              </label>
+
+              <textarea
+                id="clientMessage"
+                name="clientMessage"
+                placeholder="What would you like help with?"
+                required
+                maxlength="2000"></textarea>
+            </div>
+
+            <div class="agreement">
+
+              <input
+                type="checkbox"
+                id="termsAgreement"
+                required>
+
+              <label for="termsAgreement">
+                I have read and agree to the
+                <a href="#terms">Terms of Service and Client Agreement</a>,
+                understand the pricing and payment conditions,
+                and acknowledge that coaching does not guarantee
+                employment or income.
+              </label>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              Submit Booking Inquiry →
+            </button>
+
+            <p class="form-note">
+              Your email application will open with your inquiry
+              prepared. You must send the email to complete submission.
+              No payment is collected through this form.
+            </p>
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DISCLAIMER -->
+
+    <section class="disclaimer" id="disclaimer">
+      <div class="container">
+
+        <div class="disclaimer-box">
+
+          <h3>Important Service Disclaimer</h3>
+
+          <p>
+            VA Launchpad is an independent coaching and career
+            preparation service operated under CathiesNest Digital.
+          </p>
+
+          <p>
+            Our services are intended to provide educational guidance,
+            practical coaching, CV and portfolio feedback, and
+            general career preparation for individuals interested
+            in Virtual Assistant and remote work opportunities.
+          </p>
+
+          <p>
+            We are not a recruitment agency, employment agency,
+            or job placement provider. We do not guarantee employment,
+            client acquisition, job interviews, specific income,
+            or financial results.
+          </p>
+
+          <p>
+            Individual outcomes depend on several factors,
+            including your skills, qualifications, experience,
+            effort, and opportunities available in the market.
+          </p>
+
+          <p>
+            By purchasing a service, you acknowledge that coaching
+            is intended to support your professional development
+            and does not guarantee a particular career outcome.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TERMS AND AGREEMENT -->
+
+    <section class="terms" id="terms">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">TRANSPARENCY MATTERS</div>
+          <h2>Terms of Service & Client Agreement</h2>
+
+          <p>
+            Please review these terms before purchasing
+            or booking any service.
+          </p>
+        </div>
+
+        <div class="terms-container">
+
+          <p class="terms-intro">
+            By requesting and purchasing a service,
+            you acknowledge and agree to the following:
+          </p>
+
+          <details class="term-item">
+            <summary>1. Service Agreement</summary>
+
+            <div class="term-content">
+              <p>
+                VA Launchpad provides coaching, educational guidance,
+                CV and portfolio reviews, and career preparation services.
+              </p>
+
+              <p>
+                The client agrees to pay the published or individually
+                quoted price for the specific service requested.
+              </p>
+            </div>
+          </details>
+
+          <details class="term-item">
+            <summary>2. Payment Terms</summary>
+
+            <div class="term-content">
+              <ul>
+                <li>Payments are accepted through GCash or GoTyme Bank.</li>
+                <li>Full payment is required before the service begins,
+                  unless another arrangement has been agreed upon in writing.</li>
+                <li>A booking is confirmed once payment has been received
+                  and acknowledged and the schedule has been agreed upon.</li>
+                <li>Clients should keep their payment confirmation
+                  or receipt for reference.</li>
+                <li>No additional charges will be imposed without
+                  the client's prior agreement.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="term-item">
+            <summary>3. Scheduling and Rescheduling</summary>
+
+            <div class="term-content">
+              <ul>
+                <li>Clients should attend their confirmed coaching
+                  schedule on time.</li>
+                <li>Requests to reschedule should be made at least
+                  24 hours before the scheduled session.</li>
+                <li>Rescheduling is subject to availability.</li>
+                <li>If the service provider needs to cancel or reschedule,
+                  the client will be offered another schedule or an
+                  appropriate refund.</li>
+                <li>If a client cannot attend, they should notify
+                  the service provider as soon as possible.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="term-item">
+            <summary>4. Refund and Cancellation Policy</summary>
+
+            <div class="term-content">
+              <p>
+                We aim to handle cancellations and refund requests
+                fairly and transparently.
+              </p>
+
+              <ul>
+                <li>If a client cancels before any service or
+                  preparation has started, they may request a refund.</li>
+                <li>If a service has been partially completed,
+                  any refund will account for the portion already
+                  delivered and reasonable work already performed.</li>
+                <li>Completed services are generally non-refundable,
+                  except where required by applicable law or where
+                  there is an unresolved service issue.</li>
+                <li>If VA Launchpad cannot deliver a paid service,
+                  the client may choose to reschedule or receive
+                  a refund for the undelivered service.</li>
+                <li>Refund requests should be sent to
+                  cathiesnest@gmail.com.</li>
+              </ul>
+
+              <p>
+                Nothing in this policy limits any consumer rights
+                or remedies available under Philippine law.
+              </p>
+            </div>
+          </details>
+
+          <details class="term-item">
+            <summary>5. Client Responsibilities</summary>
+
+            <div class="term-content">
+              <p>Clients agree to:</p>
+
+              <ul>
+                <li>Provide accurate information necessary
+                  for the requested service.</li>
+                <li>Participate respectfully and professionally.</li>
+                <li>Complete any preparation or activities
+                  required for their coaching session.</li>
+                <li>Make payments according to the agreed terms.</li>
+                <li>Maintain responsibility for their own
+                  career decisions and applications.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="term-item">
+            <summary>6. No Employment or Income Guarantee</summary>
+
+            <div class="term-content">
+              <p>
+                VA Launchpad does not guarantee employment,
+                client acquisition, job interviews, or a specific income.
+              </p>
+
+              <p>
+                Coaching provides educational and professional guidance.
+                Actual results depend on the client's own efforts,
+                qualifications, experience, and available opportunities.
+              </p>
+            </div>
+          </details>
+
+          <details class="term-item">
+            <summary>7. Privacy and Confidentiality</summary>
+
+            <div class="term-content">
+              <p>
+                Personal information, CVs, portfolios, and other
+                materials shared by clients will be handled with
+                reasonable care and used only for purposes related
+                to the requested service, unless otherwise authorized
+                or required by law.
+              </p>
+
+              <p>
+                Clients should avoid submitting passwords,
+                banking credentials, or other unnecessary sensitive
+                personal information.
+              </p>
+
+              <p>
+                For privacy-related questions or requests,
+                contact cathiesnest@gmail.com.
+              </p>
+            </div>
+          </details>
+
+          <details class="term-item">
+            <summary>8. Acceptance of Terms</summary>
+
+            <div class="term-content">
+              <p>
+                By proceeding with payment, the client confirms
+                that they have reviewed and accepted these terms
+                and agrees to pay for the service they have
+                voluntarily requested.
+              </p>
+
+              <p>
+                For questions or clarification, please contact:
+                cathiesnest@gmail.com.
+              </p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+      <div class="container">
+
+        <div class="eyebrow">YOUR NEXT STEP STARTS HERE</div>
+
+        <h2>Ready to move forward?</h2>
+
+        <p>
+          You don't have to figure everything out alone.
+          Let's work on your skills, professional presentation,
+          and career direction.
+        </p>
+
+        <a href="mailto:cathiesnest@gmail.com"
+          class="contact-email">
+          cathiesnest@gmail.com
+        </a>
+
+        <div class="contact-buttons">
+
+          <a href="#booking" class="btn">
+            Request a Coaching Session
+          </a>
+
+          <a href="https://cathiesnest.github.io/startops/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-outline">
+            Explore StartOps →
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container">
+
+      <div class="footer-content">
+
+        <div class="footer-brand">
+          <h3>VA Launchpad</h3>
+
+          <p>
+            Build your skills. Own your next step.
+          </p>
+
+          <p style="margin-top:10px;">
+            An independent coaching service by CathiesNest Digital.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#terms">Terms</a>
+          <a href="#disclaimer">Disclaimer</a>
+          <a href="mailto:cathiesnest@gmail.com">Contact</a>
+          <a href="https://cathiesnest.github.io/startops/"
+             target="_blank"
+             rel="noopener noreferrer">StartOps</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p>
+          © <span id="currentYear">2026</span>
+          CathiesNest Digital. All rights reserved.
+        </p>
+
+        <p class="powered">
+          Powered by CathiesNest Digital
+        </p>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <a href="#home" class="back-top" aria-label="Back to top">↑</a>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    // MOBILE NAVIGATION
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function() {
+      navLinks.classList.toggle("active");
+
+      const isOpen = navLinks.classList.contains("active");
+
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", function() {
+        navLinks.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+
+    // AUTO-SELECT SERVICE
+
+    document.querySelectorAll(".choose-service").forEach(button => {
+
+      button.addEventListener("click", function() {
+
+        const selectedService = this.getAttribute("data-service");
+
+        const serviceSelect = document.getElementById("clientService");
+
+        const matchingOption = Array.from(serviceSelect.options)
+          .find(option => option.textContent.trim().startsWith(selectedService));
+
+        if (matchingOption) {
+          serviceSelect.value = matchingOption.value;
+        }
+
+      });
+
+    });
+
+
+    // BOOKING INQUIRY EMAIL
+
+    document.getElementById("bookingForm")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const form = this;
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        const agreed = document.getElementById("termsAgreement").checked;
+
+        if (!agreed) {
+          alert("Please read and accept the Terms of Service before proceeding.");
+          return;
+        }
+
+        const name = document.getElementById("clientName").value.trim();
+        const email = document.getElementById("clientEmail").value.trim();
+        const service = document.getElementById("clientService").value;
+        const schedule = document.getElementById("preferredSchedule").value.trim();
+        const message = document.getElementById("clientMessage").value.trim();
+
+        const subject = "VA Launchpad - New Coaching Inquiry";
+
+        const body =
+`NEW VA LAUNCHPAD BOOKING INQUIRY
+
+CLIENT DETAILS
+Name: ${name}
+Email: ${email}
+
+SERVICE REQUESTED
+${service}
+
+PREFERRED SCHEDULE
+${schedule || "Not specified"}
+
+CLIENT MESSAGE
+${message}
+
+TERMS AND AGREEMENT
+The client has confirmed that they have read and agreed to the Terms of Service and Client Agreement.
+
+Please review this inquiry and respond with booking confirmation and payment instructions.
+
+---
+VA Launchpad
+Powered by CathiesNest Digital`;
+
+        const mailto =
+          "mailto:cathiesnest@gmail.com" +
+          "?subject=" + encodeURIComponent(subject) +
+          "&body=" + encodeURIComponent(body);
+
+        window.location.href = mailto;
+
+        alert(
+          "Your email application should open with your booking inquiry. Please send the prepared email to complete your request."
+        );
+
+      });
+
+
+    // AUTOMATIC COPYRIGHT YEAR
+
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>
