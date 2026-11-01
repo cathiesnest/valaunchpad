@@ -1,8 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>VA Launchpad</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600;1,700&display=swap">
@@ -275,6 +270,10 @@ footer .in{font-size:.95rem}
 .abtxt{margin-top:24px;max-width:70ch}
 .abtxt p{color:var(--muted);font-size:1.08rem}
 .abtxt p+p{margin-top:14px}
+.abtxt .who{margin-top:28px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-ink);font-weight:700}
+.abtxt .whol{margin:12px 0 0;padding-left:20px;color:var(--muted);font-size:1.08rem}
+.abtxt .whol li{margin-bottom:8px}
+.abtxt .whol+p{margin-top:24px}
 
 /* Disclaimer: expandable */
 .disc .fold>summary>h3{margin:0}
@@ -282,6 +281,11 @@ footer .in{font-size:.95rem}
 
 /* Terms: soft sage background, refined form card */
 #terms{background:linear-gradient(180deg,color-mix(in srgb,var(--sage) 14%,var(--surface)),color-mix(in srgb,var(--sage) 30%,var(--surface)))}
+.okh{display:block;font-size:1.25rem;font-weight:800}
+.ref{display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin:16px 0;padding:18px 20px;border:2px dashed var(--teal);border-radius:14px;background:var(--bg);max-width:100%}
+.reflbl{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-ink)}
+.refnum{font-size:clamp(1.3rem,5vw,1.9rem);font-weight:800;letter-spacing:.05em;color:var(--fg);font-variant-numeric:tabular-nums;overflow-wrap:anywhere;user-select:all}
+.ref .copy{margin-top:6px}
 .fbrand{display:flex;align-items:center;gap:12px;margin-bottom:6px}
 .totop{width:38px;height:38px;border-radius:10px;background:#B8F0C4;color:#08322B;display:grid;place-items:center;text-decoration:none;transition:transform .15s}
 .totop svg{width:20px;height:20px}
@@ -296,8 +300,6 @@ html,body{margin:0;padding:0}
 #terms .form{background:var(--surface);border-color:color-mix(in srgb,var(--sage) 55%,var(--surface));box-shadow:0 14px 36px rgba(8,50,43,.09)}
 </style>
 
-</head>
-<body>
 <div class="heroband">
 <header class="in top">
   <a class="brand" href="#top" id="top">
@@ -389,15 +391,22 @@ html,body{margin:0;padding:0}
 
 <section class="band alt" id="about">
   <div class="in">
-    <p class="eyebrow">About Catherine</p>
+    <p class="eyebrow">About VA Launchpad</p>
     <details class="fold" id="abfold">
     <summary>
-      <h2>Hi, I'm Catherine</h2>
+      <h2>Coaching for new virtual assistants</h2>
       <span class="tog"><span class="lbl lbl-closed">Read more</span><span class="lbl lbl-open">Show less</span><span class="arr" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
     </summary>
     <div class="abtxt">
-      <p>I'm the founder of CathiesNest Digital. I created VA Launchpad to give aspiring virtual assistants friendly, practical guidance at prices that are easy to understand.</p>
-      <p>My coaching focuses on building useful skills, presenting your work well, and taking your next step with confidence. Sessions are one-on-one, respectful of your pace, and honest about what coaching can and cannot do.</p>
+      <p>VA Launchpad is a coaching service by CathiesNest Digital for people starting out as virtual assistants. We offer friendly, practical guidance with clear prices, so you always know what you are paying for and what to expect.</p>
+      <p>Coaching led by Catherine of CathiesNest Digital.</p>
+      <h3 class="who">Who this is for</h3>
+      <ul class="whol">
+        <li>Beginners exploring a virtual assistant career</li>
+        <li>Career shifters looking for flexible, remote work</li>
+        <li>Students and fresh graduates building their first skills</li>
+        <li>Anyone who wants a stronger CV and portfolio</li>
+      </ul>
       <p>Looking for tools to run your VA work? Try <a href="https://cathiesnest.github.io/startops/" target="_blank" rel="noopener">StartOps</a>, also from CathiesNest Digital.</p>
     </div>
     </details>
@@ -475,8 +484,14 @@ html,body{margin:0;padding:0}
         <div><button class="btn pri" type="submit" id="fsub">Create my request</button></div>
       </div>
       <div class="out" id="out" hidden>
-        <strong>Your request is ready.</strong>
-        <p class="note" style="margin-top:6px">Nothing has been sent yet. Copy this summary and email it to <b>cathiesnest@gmail.com</b>.</p>
+        <strong class="okh">Thank you! Your request is ready.</strong>
+        <div class="ref">
+          <span class="reflbl">Your reference number</span>
+          <span class="refnum" id="refnum"></span>
+          <div><button class="copy" type="button" id="cr">Copy reference number</button></div>
+          <span class="note" id="crm" role="status"></span>
+        </div>
+        <p class="note">Please keep this number and quote it in any message about your booking. To complete your request, email the summary below to <b>cathiesnest@gmail.com</b>. Your request is not sent until you email it.</p>
         <pre id="sum"></pre>
         <div class="acts">
           <button class="btn pri" type="button" id="cp">Copy summary</button>
@@ -554,8 +569,10 @@ html,body{margin:0;padding:0}
     if(!a){x.textContent='Please tick the box to accept the Terms and Agreement.';return}
     x.textContent='';
     var today=new Date().toLocaleDateString('en-PH',{year:'numeric',month:'long',day:'numeric'});
+    var ref=makeRef();
     var text=[
       'VA Launchpad session request',
+      'Reference number: '+ref,
       'Date of request: '+today,
       'Name: '+n,
       'Email: '+e,
@@ -565,13 +582,28 @@ html,body{margin:0;padding:0}
       'Agreement: I have read and agree to the VA Launchpad Terms and Agreement and Disclaimer, and I agree to pay the listed price for the service requested.'
     ].join('\n');
     document.getElementById('sum').textContent=text;
-    document.getElementById('ml').href='mailto:cathiesnest@gmail.com?subject='+encodeURIComponent('VA Launchpad request: '+s)+'&body='+encodeURIComponent(text);
+    document.getElementById('ml').href='mailto:cathiesnest@gmail.com?subject='+encodeURIComponent('VA Launchpad request '+ref+': '+s)+'&body='+encodeURIComponent(text);
     document.getElementById('cpm').textContent='';
+    document.getElementById('refnum').textContent=ref;
+    document.getElementById('crm').textContent='';
     document.getElementById('out').hidden=false;
     document.getElementById('out').scrollIntoView({behavior:'smooth',block:'nearest'});
   });
   document.getElementById('cp').addEventListener('click',function(){
     copyText(document.getElementById('sum').textContent,document.getElementById('cpm'),'Summary copied. Paste it into an email to cathiesnest@gmail.com.');
+  });
+
+  function makeRef(){
+    var chars='ABCDEFGHJKMNPQRSTUVWXYZ23456789',code='',i;
+    var arr=new Uint8Array(5);
+    try{crypto.getRandomValues(arr)}catch(e){for(i=0;i<5;i++)arr[i]=Math.floor(Math.random()*256)}
+    for(i=0;i<5;i++)code+=chars.charAt(arr[i]%chars.length);
+    var d=new Date();
+    var ymd=''+d.getFullYear()+('0'+(d.getMonth()+1)).slice(-2)+('0'+d.getDate()).slice(-2);
+    return 'VAL-'+ymd+'-'+code;
+  }
+  document.getElementById('cr').addEventListener('click',function(){
+    copyText(document.getElementById('refnum').textContent,document.getElementById('crm'),'Reference number copied.');
   });
 
   var fold=document.getElementById('svcfold');
@@ -599,5 +631,3 @@ html,body{margin:0;padding:0}
   hashOpen();window.addEventListener('hashchange',hashOpen);
 })();
 </script>
-</body>
-</html>
